@@ -1,0 +1,21 @@
+{
+  "case_id": "SYNTHETIC-PLATE-BATCH-001",
+  "synthetic": true,
+  "stock": {"width_mm": 1500, "length_mm": 3000, "kerf_mm": 3, "edge_trim_mm": 10},
+  "note": "Invented rectangular parts for software demonstration only.",
+  "parts": [
+    {"part_id":"A-01","component_name":"panel_A","width_mm":1200,"height_mm":600,"allow_rotation":true},
+    {"part_id":"A-02","component_name":"panel_A","width_mm":1200,"height_mm":600,"allow_rotation":true},
+    {"part_id":"B-01","component_name":"panel_B","width_mm":900,"height_mm":400,"allow_rotation":true},
+    {"part_id":"B-02","component_name":"panel_B","width_mm":900,"height_mm":400,"allow_rotation":true},
+    {"part_id":"C-01","component_name":"panel_C","width_mm":700,"height_mm":350,"allow_rotation":true},
+    {"part_id":"C-02","component_name":"panel_C","width_mm":700,"height_mm":350,"allow_rotation":true},
+    {"part_id":"C-03","component_name":"panel_C","width_mm":700,"height_mm":350,"allow_rotation":true},
+    {"part_id":"D-01","component_name":"panel_D","width_mm":500,"height_mm":300,"allow_rotation":true},
+    {"part_id":"D-02","component_name":"panel_D","width_mm":500,"height_mm":300,"allow_rotation":true},
+    {"part_id":"D-03","component_name":"panel_D","width_mm":500,"height_mm":300,"allow_rotation":true},
+    {"part_id":"E-01","component_name":"panel_E","width_mm":400,"height_mm":250,"allow_rotation":true},
+    {"part_id":"E-02","component_name":"panel_E","width_mm":400,"height_mm":250,"allow_rotation":true},
+    {"part_id":"E-03","component_name":"panel_E","width_mm":400,"height_mm":250,"allow_rotation":true}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "project_code": "DEMO-PROJECT",
+  "requirements": [
+    {"part_id":"BRKT-01","component_name":"mounting_bracket","width_mm":180,"height_mm":80,"allow_rotation":true,"material_grade":"S275JR","thickness_mm":3.0},
+    {"part_id":"PLATE-01","component_name":"cover_plate","width_mm":450,"height_mm":300,"allow_rotation":true,"material_grade":"S275JR","thickness_mm":3.0}
+  ],
+  "note": "The live API seeds separate demo inventory records. These requirements are illustrative only."
+}

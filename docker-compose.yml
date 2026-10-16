@@ -1,0 +1,37 @@
+services:
+  api:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    environment:
+      STEELMIND_DB_PATH: /data/steelmind.db
+      STEELMIND_ENABLE_DEMO_SEED: ${STEELMIND_ENABLE_DEMO_SEED:-false}
+      STEELMIND_LLM_ENABLED: ${STEELMIND_LLM_ENABLED:-false}
+      STEELMIND_LLM_BASE_URL: ${STEELMIND_LLM_BASE_URL:-https://api.openai.com/v1}
+      STEELMIND_LLM_API_KEY: ${STEELMIND_LLM_API_KEY:-}
+      STEELMIND_LLM_MODEL: ${STEELMIND_LLM_MODEL:-}
+    volumes:
+      - steelmind-data:/data
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2)"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  ui:
+    build: .
+    command: streamlit run app/ui/streamlit_app.py --server.address 0.0.0.0 --server.port 8501 --browser.gatherUsageStats false
+    environment:
+      STEELMIND_API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8501:8501"
+    restart: unless-stopped
+
+volumes:
+  steelmind-data:
